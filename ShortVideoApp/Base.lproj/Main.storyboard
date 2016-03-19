@@ -71,6 +71,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="playBtn" destination="56u-yR-q5K" id="sC1-G5-oca"/>
                         <outlet property="videoView" destination="gMB-3U-HEF" id="sN9-RW-aeS"/>
                     </connections>
                 </viewController>

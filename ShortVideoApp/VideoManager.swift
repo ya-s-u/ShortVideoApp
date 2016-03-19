@@ -8,7 +8,7 @@ import AVFoundation
 class VideoManager: NSObject, AVCaptureFileOutputRecordingDelegate {
 
     static let sharedInstance = VideoManager()
-    private var delegate: VideoManagerDelegate?
+    internal var delegate: VideoManagerDelegate?
 
     internal var position: AVCaptureDevicePosition? {
         didSet {

@@ -1,10 +1,10 @@
 import UIKit
 import AVFoundation
-import APNGKit
 
 class CameraViewController: UIViewController, VideoManagerDelegate {
 
     @IBOutlet private weak var videoView: UIView!
+    @IBOutlet private weak var playBtn: DesignableButton!
 
     private var video: VideoManager?
     private var frames: [APNG]?
@@ -14,6 +14,7 @@ class CameraViewController: UIViewController, VideoManagerDelegate {
         guard let video = video else {
             return
         }
+        video.delegate = self
         video.position = .Front
         let layer = video.layer
         layer.frame = view.frame
@@ -29,10 +30,12 @@ class CameraViewController: UIViewController, VideoManagerDelegate {
     @IBAction func tapPlayBtn(sender: AnyObject) {
         print("tap")
         video?.capture(2.0)
+        playBtn.enabled = false
     }
 
     func captured(video: AVAsset) {
         print(video)
+        playBtn.enabled = true
     }
 
     func drawFrames() {
@@ -40,7 +43,9 @@ class CameraViewController: UIViewController, VideoManagerDelegate {
             return
         }
         for frame in frames {
-            let imageView = APNGImageView(image: frame.image)
+            guard let imageView = frame.view else {
+                return
+            }
             imageView.frame = view.frame
             imageView.startAnimating()
             videoView.addSubview(imageView)

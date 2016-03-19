@@ -4,16 +4,13 @@ import APNGKit
 class APNG {
 
     private var name: String?
+    internal var image: APNGImage?
+    internal var view: APNGImageView?
 
     init(name: String) {
         self.name = name
-    }
-
-    internal var image: APNGImage? {
-        guard let name = name else {
-            return nil
-        }
-        return APNGImage(named: name)
+        image = APNGImage(named: name)
+        view = APNGImageView(image: image)
     }
 
 }
