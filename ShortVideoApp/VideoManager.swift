@@ -10,7 +10,12 @@ class VideoManager: NSObject, AVCaptureFileOutputRecordingDelegate {
     static let sharedInstance = VideoManager()
     private var delegate: VideoManagerDelegate?
 
-    internal var position: AVCaptureDevicePosition?
+    internal var position: AVCaptureDevicePosition? {
+        didSet {
+            // TODO: refresh output
+        }
+    }
+
     private var device: AVCaptureDevice?
     private var session: AVCaptureSession?
     private var input: AVCaptureInput?
