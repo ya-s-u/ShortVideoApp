@@ -1,5 +1,6 @@
 import UIKit
 import AVFoundation
+import APNGKit
 
 class CameraViewController: UIViewController, VideoManagerDelegate {
 
@@ -16,6 +17,12 @@ class CameraViewController: UIViewController, VideoManagerDelegate {
         let layer = video.layer
         layer.frame = view.frame
         videoView.layer.insertSublayer(layer, below: videoView.layer)
+
+        let image = APNGImage(named: "friend")
+        let imageView = APNGImageView(image: image)
+        imageView.frame = view.frame
+        view.addSubview(imageView)
+        imageView.startAnimating()
     }
 
     @IBAction func tapPlayBtn(sender: AnyObject) {
