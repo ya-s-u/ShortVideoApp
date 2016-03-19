@@ -1,7 +1,7 @@
 import Foundation
 import APNGKit
 
-class APNG {
+class Animation {
 
     private var name: String?
     internal var image: APNGImage?

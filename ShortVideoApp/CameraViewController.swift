@@ -7,7 +7,7 @@ class CameraViewController: UIViewController, VideoManagerDelegate {
     @IBOutlet private weak var playBtn: DesignableButton!
 
     private var video: VideoManager?
-    private var frames: [APNG]?
+    private var frames: [Animation]?
 
     override func viewDidLoad() {
         video = VideoManager.sharedInstance
@@ -21,8 +21,8 @@ class CameraViewController: UIViewController, VideoManagerDelegate {
         videoView.layer.insertSublayer(layer, below: videoView.layer)
 
         frames = []
-        frames?.append(APNG(name: "friend"))
-        frames?.append(APNG(name: "star"))
+        frames?.append(Animation(name: "friend"))
+        frames?.append(Animation(name: "star"))
 
         drawFrames()
     }
