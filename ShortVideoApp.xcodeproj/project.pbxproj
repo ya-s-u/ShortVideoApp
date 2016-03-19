@@ -22,6 +22,7 @@
 		5A7077321C9DC2B6007C0DC7 /* CAKeyframeAnimation+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7077311C9DC2B6007C0DC7 /* CAKeyframeAnimation+.swift */; };
 		5A7077341C9DC305007C0DC7 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7077331C9DC304007C0DC7 /* CALayer+.swift */; };
 		5A7077361C9DC4AC007C0DC7 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7077351C9DC4AC007C0DC7 /* Animation.swift */; };
+		5A7077381C9DCA04007C0DC7 /* VideoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7077371C9DCA04007C0DC7 /* VideoEditor.swift */; };
 		DFFBFBCB99C14899498E3760 /* Pods_ShortVideoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC53E697D4A11A3ADFE50C7F /* Pods_ShortVideoApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		5A7077311C9DC2B6007C0DC7 /* CAKeyframeAnimation+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAKeyframeAnimation+.swift"; sourceTree = "<group>"; };
 		5A7077331C9DC304007C0DC7 /* CALayer+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		5A7077351C9DC4AC007C0DC7 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		5A7077371C9DCA04007C0DC7 /* VideoEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEditor.swift; sourceTree = "<group>"; };
 		C6B2E2A1679A0B8AD5C75E96 /* Pods-ShortVideoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortVideoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShortVideoApp/Pods-ShortVideoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DA8AE0A916E44E0DA6839245 /* Pods-ShortVideoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortVideoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShortVideoApp/Pods-ShortVideoApp.release.xcconfig"; sourceTree = "<group>"; };
 		DC53E697D4A11A3ADFE50C7F /* Pods_ShortVideoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShortVideoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				5A4097961C9D97CF00C3979F /* VideoManager.swift */,
+				5A7077371C9DCA04007C0DC7 /* VideoEditor.swift */,
 				5A7077351C9DC4AC007C0DC7 /* Animation.swift */,
 			);
 			name = Utilities;
@@ -300,6 +303,7 @@
 			files = (
 				5A7077321C9DC2B6007C0DC7 /* CAKeyframeAnimation+.swift in Sources */,
 				5A4097741C9D7B0C00C3979F /* CameraViewController.swift in Sources */,
+				5A7077381C9DCA04007C0DC7 /* VideoEditor.swift in Sources */,
 				5A4097931C9D83CE00C3979F /* UIColor+.swift in Sources */,
 				5A7077361C9DC4AC007C0DC7 /* Animation.swift in Sources */,
 				5A7077301C9DB289007C0DC7 /* NSURL+.swift in Sources */,

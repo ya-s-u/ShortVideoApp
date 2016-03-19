@@ -1,4 +1,3 @@
-import UIKit
 import AVFoundation
 
 @objc protocol VideoManagerDelegate {

@@ -35,6 +35,7 @@ class CameraViewController: UIViewController, VideoManagerDelegate {
 
     func captured(video: AVAsset) {
         print(video)
+        VideoEditor(video: video)
         playBtn.enabled = true
     }
 
