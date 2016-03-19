@@ -17,6 +17,7 @@
 		5A4097911C9D839E00C3979F /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4097901C9D839E00C3979F /* DesignableView.swift */; };
 		5A4097931C9D83CE00C3979F /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4097921C9D83CE00C3979F /* UIColor+.swift */; };
 		5A4097951C9D928A00C3979F /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4097941C9D928A00C3979F /* DesignableButton.swift */; };
+		5A4097971C9D97CF00C3979F /* VideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4097961C9D97CF00C3979F /* VideoManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		5A4097901C9D839E00C3979F /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		5A4097921C9D83CE00C3979F /* UIColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		5A4097941C9D928A00C3979F /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
+		5A4097961C9D97CF00C3979F /* VideoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		5A4097861C9D7C6400C3979F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				5A4097961C9D97CF00C3979F /* VideoManager.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				5A4097931C9D83CE00C3979F /* UIColor+.swift in Sources */,
 				5A4097721C9D7B0C00C3979F /* AppDelegate.swift in Sources */,
 				5A4097911C9D839E00C3979F /* DesignableView.swift in Sources */,
+				5A4097971C9D97CF00C3979F /* VideoManager.swift in Sources */,
 				5A4097951C9D928A00C3979F /* DesignableButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

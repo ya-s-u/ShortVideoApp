@@ -19,45 +19,47 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gMB-3U-HEF">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56u-yR-q5K" customClass="DesignableButton" customModule="ShortVideoApp" customModuleProvider="target">
-                                        <rect key="frame" x="260" y="450" width="80" height="80"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="Bs7-k2-hFU"/>
-                                            <constraint firstAttribute="height" constant="80" id="G8f-pI-qlD"/>
-                                            <constraint firstAttribute="width" constant="80" id="Jo5-Zc-XB1"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="O67-UF-T2C"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="40"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="8"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="tapPlayBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rwx-T2-wEa"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="56u-yR-q5K" firstAttribute="centerX" secondItem="gMB-3U-HEF" secondAttribute="centerX" id="Aw6-uh-ASi"/>
-                                    <constraint firstAttribute="bottom" secondItem="56u-yR-q5K" secondAttribute="bottom" constant="50" id="F2Q-Uv-RJv"/>
-                                </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56u-yR-q5K" customClass="DesignableButton" customModule="ShortVideoApp" customModuleProvider="target">
+                                <rect key="frame" x="260" y="470" width="80" height="80"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="Bs7-k2-hFU"/>
+                                    <constraint firstAttribute="height" constant="80" id="G8f-pI-qlD"/>
+                                    <constraint firstAttribute="width" constant="80" id="Jo5-Zc-XB1"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="O67-UF-T2C"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Bs7-k2-hFU"/>
+                                        <exclude reference="O67-UF-T2C"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="tapPlayBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rwx-T2-wEa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gMB-3U-HEF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="GQL-MC-sAK"/>
                             <constraint firstItem="gMB-3U-HEF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="GTU-x6-dsQ"/>
+                            <constraint firstItem="56u-yR-q5K" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LhN-gJ-Nzo"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gMB-3U-HEF" secondAttribute="bottom" id="TqV-g4-as7"/>
                             <constraint firstItem="gMB-3U-HEF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="VCY-R9-Byn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="56u-yR-q5K" secondAttribute="bottom" constant="50" id="cem-Ky-VB5"/>
                             <constraint firstItem="gMB-3U-HEF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xAt-gh-0BW"/>
                             <constraint firstAttribute="trailing" secondItem="gMB-3U-HEF" secondAttribute="trailing" id="yfi-KK-A5Z"/>
                         </constraints>
@@ -68,6 +70,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="videoView" destination="gMB-3U-HEF" id="sN9-RW-aeS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
