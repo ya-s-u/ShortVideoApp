@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  ShortVideoApp
-//
-//  Created by 後藤誉昌 on 2016/03/19.
-//  Copyright © 2016年 後藤誉昌. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain

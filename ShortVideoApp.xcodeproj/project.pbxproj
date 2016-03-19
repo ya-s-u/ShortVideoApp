@@ -55,13 +55,53 @@
 			isa = PBXGroup;
 			children = (
 				5A4097711C9D7B0C00C3979F /* AppDelegate.swift */,
-				5A4097731C9D7B0C00C3979F /* ViewController.swift */,
-				5A4097751C9D7B0C00C3979F /* Main.storyboard */,
-				5A4097781C9D7B0C00C3979F /* Assets.xcassets */,
-				5A40977A1C9D7B0C00C3979F /* LaunchScreen.storyboard */,
+				5A4097861C9D7C6400C3979F /* Utilities */,
+				5A4097831C9D7C3400C3979F /* Models */,
+				5A4097841C9D7C4400C3979F /* ViewControllers */,
+				5A4097851C9D7C4E00C3979F /* VIews */,
+				5A4097871C9D7C6B00C3979F /* Resources */,
 				5A40977D1C9D7B0C00C3979F /* Info.plist */,
 			);
 			path = ShortVideoApp;
+			sourceTree = "<group>";
+		};
+		5A4097831C9D7C3400C3979F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5A4097841C9D7C4400C3979F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5A4097731C9D7B0C00C3979F /* ViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5A4097851C9D7C4E00C3979F /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = VIews;
+			sourceTree = "<group>";
+		};
+		5A4097861C9D7C6400C3979F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		5A4097871C9D7C6B00C3979F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5A4097751C9D7B0C00C3979F /* Main.storyboard */,
+				5A40977A1C9D7B0C00C3979F /* LaunchScreen.storyboard */,
+				5A4097781C9D7B0C00C3979F /* Assets.xcassets */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +326,7 @@
 				5A4097821C9D7B0C00C3979F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
