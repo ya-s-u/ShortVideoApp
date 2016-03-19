@@ -18,6 +18,7 @@
 		5A4097931C9D83CE00C3979F /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4097921C9D83CE00C3979F /* UIColor+.swift */; };
 		5A4097951C9D928A00C3979F /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4097941C9D928A00C3979F /* DesignableButton.swift */; };
 		5A4097971C9D97CF00C3979F /* VideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4097961C9D97CF00C3979F /* VideoManager.swift */; };
+		5A7077301C9DB289007C0DC7 /* NSURL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70772F1C9DB289007C0DC7 /* NSURL+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		5A4097921C9D83CE00C3979F /* UIColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		5A4097941C9D928A00C3979F /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
 		5A4097961C9D97CF00C3979F /* VideoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoManager.swift; sourceTree = "<group>"; };
+		5A70772F1C9DB289007C0DC7 /* NSURL+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				5A4097921C9D83CE00C3979F /* UIColor+.swift */,
+				5A70772F1C9DB289007C0DC7 /* NSURL+.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			files = (
 				5A4097741C9D7B0C00C3979F /* CameraViewController.swift in Sources */,
 				5A4097931C9D83CE00C3979F /* UIColor+.swift in Sources */,
+				5A7077301C9DB289007C0DC7 /* NSURL+.swift in Sources */,
 				5A4097721C9D7B0C00C3979F /* AppDelegate.swift in Sources */,
 				5A4097911C9D839E00C3979F /* DesignableView.swift in Sources */,
 				5A4097971C9D97CF00C3979F /* VideoManager.swift in Sources */,

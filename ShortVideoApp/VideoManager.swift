@@ -7,17 +7,18 @@ import AVFoundation
 
 class VideoManager: NSObject, AVCaptureFileOutputRecordingDelegate {
 
+    static let sharedInstance = VideoManager()
     private var delegate: VideoManagerDelegate?
 
-    private var position: AVCaptureDevicePosition?
+    internal var position: AVCaptureDevicePosition?
     private var device: AVCaptureDevice?
     private var session: AVCaptureSession?
     private var input: AVCaptureInput?
     private var output: AVCaptureMovieFileOutput?
 
-    init(position: AVCaptureDevicePosition) {
+    private override init() {
         super.init()
-        self.position = position
+        self.position = AVCaptureDevicePosition.Front
 
         setupCamera()
         setupInput()
@@ -57,7 +58,20 @@ class VideoManager: NSObject, AVCaptureFileOutputRecordingDelegate {
         return layer
     }
 
-    func captureOutput(captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAtURL outputFileURL: NSURL!, fromConnections connections: [AnyObject]!, error: NSError!) {
+    internal func capture(interval: Double = 2.0) {
+        guard let output = output else {
+            return
+        }
+        let url = NSURL.tmpFile()
+        output.startRecordingToOutputFileURL(url, recordingDelegate: self)
+        NSTimer.scheduledTimerWithTimeInterval(interval, target: self, selector: Selector("finish"), userInfo: nil, repeats: false)
+    }
+
+    internal func finish() {
+        output?.stopRecording()
+    }
+
+    internal func captureOutput(captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAtURL outputFileURL: NSURL!, fromConnections connections: [AnyObject]!, error: NSError!) {
         let asset = AVAsset(URL: outputFileURL)
         self.delegate?.captured!(asset)
     }
