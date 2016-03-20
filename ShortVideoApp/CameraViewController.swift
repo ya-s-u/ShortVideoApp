@@ -18,14 +18,10 @@ class CameraViewController: UIViewController, VideoManagerDelegate {
         video.position = .Front
         let layer = video.layer
         layer.frame = view.frame
-//        videoView.layer.insertSublayer(layer, below: videoView.layer)
         videoView.layer.addSublayer(layer)
 
-        frames = []
-        frames?.append(VideoAnimation(name: "friend"))
-        frames?.append(VideoAnimation(name: "star"))
-
-        drawFrames()
+        video.frames?.append(VideoAnimation(name: "friend"))
+        video.frames?.append(VideoAnimation(name: "star"))
     }
 
     @IBAction func tapPlayBtn(sender: AnyObject) {
@@ -37,20 +33,6 @@ class CameraViewController: UIViewController, VideoManagerDelegate {
     func captured(video: AVAsset) {
         print(video)
         playBtn.enabled = true
-    }
-
-    func drawFrames() {
-        guard let frames = frames else {
-            return
-        }
-        for frame in frames {
-            guard let imageView = frame.view else {
-                return
-            }
-            imageView.frame = view.frame
-            imageView.startAnimating()
-            videoView.addSubview(imageView)
-        }
     }
 
 }

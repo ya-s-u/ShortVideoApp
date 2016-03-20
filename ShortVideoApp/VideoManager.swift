@@ -15,14 +15,22 @@ class VideoManager: NSObject, VideoGrabberDelegate {
 
     private var video: AVAsset?
 
+    internal var frames: [VideoAnimation]? {
+        didSet {
+            viewer?.drawFrames()
+        }
+    }
+
     override init() {
         super.init()
         grabber = VideoGrabber.sharedInstance
+        viewer = VideoLayer()
         composer = VideoComposer()
         exporter = VideoExporter()
 
         grabber?.delegate = self
-        viewer = VideoLayer()
+
+        frames = viewer?.frames
     }
 
     internal var position: AVCaptureDevicePosition = .Front {

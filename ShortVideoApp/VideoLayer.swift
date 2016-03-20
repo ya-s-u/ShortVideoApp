@@ -10,10 +10,11 @@ class VideoLayer {
         }
     }
 
-    private var frames: [VideoAnimation]?
+    internal var frames: [VideoAnimation]?
 
     init() {
         parent = CALayer()
+        frames = []
     }
 
     internal func drawFrames() {
