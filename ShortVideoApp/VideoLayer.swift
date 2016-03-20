@@ -1,3 +1,4 @@
+import UIKit
 import AVFoundation
 
 class VideoLayer {
@@ -18,13 +19,12 @@ class VideoLayer {
     }
 
     internal func drawFrames() {
-        guard let frames = frames else {
-            return
-        }
-        for frame in frames {
+        let screen = UIScreen.mainScreen().bounds
+        for frame in frames! {
             guard let layer = frame.layer else {
                 return
             }
+            layer.frame = screen
             parent?.addSublayer(layer)
         }
     }

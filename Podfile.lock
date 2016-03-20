@@ -1,5 +1,5 @@
 PODS:
-  - APNGKit (0.2.0)
+  - APNGKit (0.3.1)
 
 DEPENDENCIES:
   - APNGKit (from `https://github.com/ya-s-u/APNGKit.git`)
@@ -10,10 +10,10 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   APNGKit:
-    :commit: b2cdde2d0100754789ce5925c320dd713f697862
+    :commit: 9f567fdb73d721c98dc686abc2e39937a6aa64f0
     :git: https://github.com/ya-s-u/APNGKit.git
 
 SPEC CHECKSUMS:
-  APNGKit: 20d43b78ae8f9fe2328f861837dfe20a18630890
+  APNGKit: aec3b27076308100649c76642c474cdf9a3939f8
 
 COCOAPODS: 0.39.0

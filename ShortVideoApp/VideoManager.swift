@@ -9,17 +9,11 @@ class VideoManager: NSObject, VideoGrabberDelegate {
     internal var delegate: VideoManagerDelegate?
 
     private var grabber: VideoGrabber?
-    private var viewer: VideoLayer?
+    internal var viewer: VideoLayer?
     private var composer: VideoComposer?
     private var exporter: VideoExporter?
 
     private var video: AVAsset?
-
-    internal var frames: [VideoAnimation]? {
-        didSet {
-            viewer?.drawFrames()
-        }
-    }
 
     override init() {
         super.init()
@@ -29,8 +23,6 @@ class VideoManager: NSObject, VideoGrabberDelegate {
         exporter = VideoExporter()
 
         grabber?.delegate = self
-
-        frames = viewer?.frames
     }
 
     internal var position: AVCaptureDevicePosition = .Front {
