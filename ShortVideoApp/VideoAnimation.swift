@@ -1,7 +1,7 @@
 import Foundation
 import APNGKit
 
-class Animation {
+class VideoAnimation {
 
     private var name: String?
     internal var image: APNGImage?
@@ -11,6 +11,10 @@ class Animation {
         self.name = name
         image = APNGImage(named: name)
         view = APNGImageView(image: image)
+    }
+
+    internal var layer: CALayer? {
+        return CALayer()
     }
 
 }
