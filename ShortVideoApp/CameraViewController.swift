@@ -15,10 +15,8 @@ class CameraViewController: UIViewController, VideoManagerDelegate {
             return
         }
         video.delegate = self
-        video.setPosition(.Front)
-//        video.position = .Front
-//        let layer = video.layer
-        let layer = video.getLayer()
+        video.position = .Front
+        let layer = video.layer
         layer.frame = view.frame
         videoView.layer.insertSublayer(layer, below: videoView.layer)
 
@@ -31,12 +29,11 @@ class CameraViewController: UIViewController, VideoManagerDelegate {
 
     @IBAction func tapPlayBtn(sender: AnyObject) {
         print("tap")
-//        video?.capture(2.0)
-        video?.startCapture()
+        video?.capture(2.0)
         playBtn.enabled = false
     }
 
-    func finishCapture(video: AVAsset) {
+    func captured(video: AVAsset) {
         print(video)
         playBtn.enabled = true
     }

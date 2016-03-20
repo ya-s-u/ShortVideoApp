@@ -9,9 +9,9 @@ class VideoGrabber: NSObject, AVCaptureFileOutputRecordingDelegate {
     static let sharedInstance = VideoGrabber()
     internal var delegate: VideoGrabberDelegate?
 
-    internal var position: AVCaptureDevicePosition? {
+    internal var position: AVCaptureDevicePosition? = .Front {
         didSet {
-            // TODO: refresh output
+            setup()
         }
     }
 
@@ -22,8 +22,10 @@ class VideoGrabber: NSObject, AVCaptureFileOutputRecordingDelegate {
 
     private override init() {
         super.init()
-        self.position = AVCaptureDevicePosition.Front
+        setup()
+    }
 
+    private func setup() {
         setupCamera()
         setupInput()
         session = AVCaptureSession()

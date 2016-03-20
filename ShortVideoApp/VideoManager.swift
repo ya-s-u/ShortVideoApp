@@ -1,7 +1,7 @@
 import AVFoundation
 
 @objc protocol VideoManagerDelegate {
-    optional func finishCapture(video: AVAsset)
+    optional func captured(video: AVAsset)
 }
 
 class VideoManager: NSObject, VideoGrabberDelegate {
@@ -23,24 +23,26 @@ class VideoManager: NSObject, VideoGrabberDelegate {
         grabber?.delegate = self
     }
 
-    internal func setPosition(position: AVCaptureDevicePosition) {
-        grabber?.position = position
+    internal var position: AVCaptureDevicePosition = .Front {
+        didSet {
+            grabber?.position = position
+        }
     }
 
-    internal func getLayer() -> CALayer {
+    internal var layer: CALayer {
         guard let grabber = grabber else {
             return CALayer()
         }
         return grabber.layer
     }
 
-    internal func startCapture() {
-        grabber?.capture()
+    internal func capture(interval: Double) {
+        grabber?.capture(interval)
     }
 
     internal func captured(video: AVAsset) {
         self.video = video
-        delegate?.finishCapture!(video)
+        delegate?.captured!(video)
     }
 
     internal func export() {
