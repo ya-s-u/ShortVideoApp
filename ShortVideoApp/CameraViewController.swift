@@ -18,7 +18,8 @@ class CameraViewController: UIViewController, VideoManagerDelegate {
         video.position = .Front
         let layer = video.layer
         layer.frame = view.frame
-        videoView.layer.insertSublayer(layer, below: videoView.layer)
+//        videoView.layer.insertSublayer(layer, below: videoView.layer)
+        videoView.layer.addSublayer(layer)
 
         frames = []
         frames?.append(Animation(name: "friend"))

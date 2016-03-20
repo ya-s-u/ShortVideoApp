@@ -9,6 +9,7 @@ class VideoManager: NSObject, VideoGrabberDelegate {
     internal var delegate: VideoManagerDelegate?
 
     private var grabber: VideoGrabber?
+    private var vlayer: VideoLayer?
     private var composer: VideoComposer?
     private var exporter: VideoExporter?
 
@@ -21,6 +22,7 @@ class VideoManager: NSObject, VideoGrabberDelegate {
         exporter = VideoExporter()
 
         grabber?.delegate = self
+        vlayer = VideoLayer()
     }
 
     internal var position: AVCaptureDevicePosition = .Front {
@@ -33,7 +35,11 @@ class VideoManager: NSObject, VideoGrabberDelegate {
         guard let grabber = grabber else {
             return CALayer()
         }
-        return grabber.layer
+        vlayer?.video = grabber.layer
+        guard let vlayer = vlayer, parent = vlayer.parent else {
+            return CALayer()
+        }
+        return parent
     }
 
     internal func capture(interval: Double) {
