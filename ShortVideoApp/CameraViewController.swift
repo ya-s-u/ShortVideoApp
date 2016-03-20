@@ -10,13 +10,15 @@ class CameraViewController: UIViewController, VideoManagerDelegate {
     private var frames: [Animation]?
 
     override func viewDidLoad() {
-        video = VideoManager.sharedInstance
+        video = VideoManager()
         guard let video = video else {
             return
         }
         video.delegate = self
-        video.position = .Front
-        let layer = video.layer
+        video.setPosition(.Front)
+//        video.position = .Front
+//        let layer = video.layer
+        let layer = video.getLayer()
         layer.frame = view.frame
         videoView.layer.insertSublayer(layer, below: videoView.layer)
 
@@ -29,13 +31,13 @@ class CameraViewController: UIViewController, VideoManagerDelegate {
 
     @IBAction func tapPlayBtn(sender: AnyObject) {
         print("tap")
-        video?.capture(2.0)
+//        video?.capture(2.0)
+        video?.startCapture()
         playBtn.enabled = false
     }
 
-    func captured(video: AVAsset) {
+    func finishCapture(video: AVAsset) {
         print(video)
-        VideoEditor(video: video)
         playBtn.enabled = true
     }
 

@@ -1,82 +1,49 @@
 import AVFoundation
 
 @objc protocol VideoManagerDelegate {
-    optional func captured(video: AVAsset)
+    optional func finishCapture(video: AVAsset)
 }
 
-class VideoManager: NSObject, AVCaptureFileOutputRecordingDelegate {
+class VideoManager: NSObject, VideoGrabberDelegate {
 
-    static let sharedInstance = VideoManager()
     internal var delegate: VideoManagerDelegate?
 
-    internal var position: AVCaptureDevicePosition? {
-        didSet {
-            // TODO: refresh output
-        }
-    }
+    private var grabber: VideoGrabber?
+    private var composer: VideoComposer?
+    private var exporter: VideoExporter?
 
-    private var device: AVCaptureDevice?
-    private var session: AVCaptureSession?
-    private var input: AVCaptureInput?
-    private var output: AVCaptureMovieFileOutput?
+    private var video: AVAsset?
 
-    private override init() {
+    override init() {
         super.init()
-        self.position = AVCaptureDevicePosition.Front
+        grabber = VideoGrabber.sharedInstance
+        composer = VideoComposer()
+        exporter = VideoExporter()
 
-        setupCamera()
-        setupInput()
-        session = AVCaptureSession()
-        output = AVCaptureMovieFileOutput()
+        grabber?.delegate = self
+    }
 
-        guard let session = session else {
-            return
+    internal func setPosition(position: AVCaptureDevicePosition) {
+        grabber?.position = position
+    }
+
+    internal func getLayer() -> CALayer {
+        guard let grabber = grabber else {
+            return CALayer()
         }
-
-        session.addInput(input)
-        session.addOutput(output)
-        session.startRunning()
+        return grabber.layer
     }
 
-    private func setupCamera() {
-        let devices = AVCaptureDevice.devices()
-        if let idx = devices.indexOf({ $0.position == position }) {
-            guard let selected = devices[idx] as? AVCaptureDevice else {
-                return
-            }
-            device = selected
-        }
+    internal func startCapture() {
+        grabber?.capture()
     }
 
-    private func setupInput() {
-        do {
-            input = try AVCaptureDeviceInput.init(device: device)
-        } catch let error as NSError {
-            print(error)
-        }
+    internal func captured(video: AVAsset) {
+        self.video = video
+        delegate?.finishCapture!(video)
     }
 
-    internal var layer: CALayer {
-        let layer = AVCaptureVideoPreviewLayer.init(session: session)
-        layer.videoGravity = AVLayerVideoGravityResizeAspectFill
-        return layer
-    }
+    internal func export() {
 
-    internal func capture(interval: Double = 2.0) {
-        guard let output = output else {
-            return
-        }
-        let url = NSURL.tmpFile()
-        output.startRecordingToOutputFileURL(url, recordingDelegate: self)
-        NSTimer.scheduledTimerWithTimeInterval(interval, target: self, selector: Selector("finish"), userInfo: nil, repeats: false)
-    }
-
-    internal func finish() {
-        output?.stopRecording()
-    }
-
-    internal func captureOutput(captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAtURL outputFileURL: NSURL!, fromConnections connections: [AnyObject]!, error: NSError!) {
-        let asset = AVAsset(URL: outputFileURL)
-        self.delegate?.captured!(asset)
     }
 }

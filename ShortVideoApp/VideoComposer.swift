@@ -1,0 +1,5 @@
+import AVFoundation
+
+class VideoComposer {
+
+}
