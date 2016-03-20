@@ -1,9 +1,9 @@
 import Foundation
 import APNGKit
 
-class VideoAnimation {
+class VideoAnimation: Equatable {
 
-    private var name: String?
+    internal var name: String?
     internal var view: APNGImageView?
 
     init(name: String) {
@@ -16,10 +16,6 @@ class VideoAnimation {
         guard let view = view else {
             return CALayer()
         }
-        let img = view.image?.frames.first?.image
-        let layer = CALayer()
-        layer.contents = img!.CGImage
-//        return layer
         return CALayer.APNG(view.image!.frames)
     }
 
@@ -31,4 +27,8 @@ class VideoAnimation {
         view?.stopAnimating()
     }
 
+}
+
+func == (lhs: VideoAnimation, rhs: VideoAnimation) -> Bool {
+    return lhs.name == rhs.name
 }

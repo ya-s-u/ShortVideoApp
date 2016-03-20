@@ -20,10 +20,10 @@ class CameraViewController: UIViewController, VideoManagerDelegate {
         layer.frame = view.frame
         videoView.layer.addSublayer(layer)
 
-        video.viewer?.frames?.append(VideoAnimation(name: "friend"))
-        video.viewer?.frames?.append(VideoAnimation(name: "star"))
+        video.addFrame(VideoAnimation(name: "friend"))
+        video.addFrame(VideoAnimation(name: "star"))
 
-        video.viewer?.drawFrames()
+        video.draw()
     }
 
     @IBAction func tapPlayBtn(sender: AnyObject) {

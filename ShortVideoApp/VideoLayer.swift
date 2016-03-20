@@ -18,7 +18,7 @@ class VideoLayer {
         frames = []
     }
 
-    internal func drawFrames() {
+    internal func draw() {
         let screen = UIScreen.mainScreen().bounds
         for frame in frames! {
             guard let layer = frame.layer else {

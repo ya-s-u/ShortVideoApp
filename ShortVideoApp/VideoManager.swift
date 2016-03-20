@@ -9,7 +9,7 @@ class VideoManager: NSObject, VideoGrabberDelegate {
     internal var delegate: VideoManagerDelegate?
 
     private var grabber: VideoGrabber?
-    internal var viewer: VideoLayer?
+    private var viewer: VideoLayer?
     private var composer: VideoComposer?
     private var exporter: VideoExporter?
 
@@ -40,6 +40,20 @@ class VideoManager: NSObject, VideoGrabberDelegate {
             return CALayer()
         }
         return parent
+    }
+
+    internal func addFrame(animation: VideoAnimation) {
+        viewer?.frames?.append(animation)
+    }
+
+    internal func removeFrame(animation: VideoAnimation) {
+        if let idx = viewer?.frames?.indexOf({ $0 == animation }) {
+            viewer?.frames?.removeAtIndex(idx)
+        }
+    }
+
+    internal func draw() {
+        viewer?.draw()
     }
 
     internal func capture(interval: Double) {
