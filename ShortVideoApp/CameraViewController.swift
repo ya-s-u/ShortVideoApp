@@ -6,35 +6,36 @@ class CameraViewController: UIViewController, VideoManagerDelegate {
     @IBOutlet private weak var videoView: UIView!
     @IBOutlet private weak var playBtn: DesignableButton!
 
-    private var video: VideoManager?
+    private var videoManager: VideoManager?
     private var frames: [VideoAnimation]?
 
     override func viewDidLoad() {
-        video = VideoManager()
-        guard let video = video else {
+        videoManager = VideoManager()
+        guard let videoManager = videoManager else {
             return
         }
-        video.delegate = self
-        video.position = .Front
-        let layer = video.layer
+        videoManager.delegate = self
+        videoManager.position = .Front
+        let layer = videoManager.layer
         layer.frame = view.frame
         videoView.layer.addSublayer(layer)
 
-        video.addFrame(VideoAnimation(name: "friend"))
-        video.addFrame(VideoAnimation(name: "star"))
+        videoManager.addFrame(VideoAnimation(name: "friend"))
+        videoManager.addFrame(VideoAnimation(name: "star"))
 
-        video.draw()
+        videoManager.draw()
     }
 
     @IBAction func tapPlayBtn(sender: AnyObject) {
         print("tap")
-        video?.capture(2.0)
+        videoManager?.capture(2.0)
         playBtn.enabled = false
     }
 
     func captured(video: AVAsset) {
         print(video)
         playBtn.enabled = true
+        videoManager?.export()
     }
 
 }

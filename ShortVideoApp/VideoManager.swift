@@ -19,8 +19,6 @@ class VideoManager: NSObject, VideoGrabberDelegate {
         super.init()
         grabber = VideoGrabber.sharedInstance
         viewer = VideoLayer()
-        composer = VideoComposer()
-        exporter = VideoExporter()
 
         grabber?.delegate = self
     }
@@ -66,6 +64,11 @@ class VideoManager: NSObject, VideoGrabberDelegate {
     }
 
     internal func export() {
-
+        guard let video = video else {
+            return
+        }
+        composer = VideoComposer(video: video)
+        composer?.applyLayer((viewer?.frames?.first?.layer)!)
+        composer?.export()
     }
 }
