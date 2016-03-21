@@ -1,11 +1,14 @@
 import AVFoundation
 import AssetsLibrary
+import UIKit
 
 class VideoComposer {
 
     private var video: AVAsset?
 
     private var mixComposition = AVMutableComposition()
+    private var mainCompositionInstruction = AVMutableVideoComposition()
+    
     private var isPortrait = false
     private var naturalSize = CGSize()
 
@@ -27,6 +30,19 @@ class VideoComposer {
         } catch let error as NSError {
             print(error)
         }
+        
+        if isPortrait {
+            naturalSize = CGSizeMake(videoAssetTrack.naturalSize.height, videoAssetTrack.naturalSize.width)
+        } else {
+            naturalSize = videoAssetTrack.naturalSize
+        }
+        
+        let renderWidth = naturalSize.width
+        let renderHeight = naturalSize.height
+        
+        mainCompositionInstruction.renderSize = CGSizeMake(renderWidth, renderHeight)
+        mainCompositionInstruction.instructions = [mainInstruction]
+        mainCompositionInstruction.frameDuration = CMTimeMake(1, 30)
     }
 
     private var videoAssetTrack: AVAssetTrack {
@@ -58,24 +74,6 @@ class VideoComposer {
         return videoLayerInstruction
     }
 
-    private var mainCompositionInstruction: AVMutableVideoComposition {
-        let mainCompositionInstruction = AVMutableVideoComposition()
-        if isPortrait {
-            naturalSize = CGSizeMake(videoAssetTrack.naturalSize.height, videoAssetTrack.naturalSize.width)
-        } else {
-            naturalSize = videoAssetTrack.naturalSize
-        }
-
-        let renderWidth = naturalSize.width
-        let renderHeight = naturalSize.height
-
-        mainCompositionInstruction.renderSize = CGSizeMake(renderWidth, renderHeight)
-        mainCompositionInstruction.instructions = [mainInstruction]
-        mainCompositionInstruction.frameDuration = CMTimeMake(1, 30)
-
-        return mainCompositionInstruction
-    }
-
     internal func applyLayer(overlay: CALayer) {
         let parentLayer = CALayer()
         let videoLayer = CALayer()
@@ -83,8 +81,13 @@ class VideoComposer {
         videoLayer.frame = CGRectMake(0, 0, naturalSize.width, naturalSize.height)
         parentLayer.addSublayer(videoLayer)
 
-        overlay.frame = CGRectMake(0, 0, naturalSize.width, naturalSize.height)
-        parentLayer.addSublayer(overlay)
+//        overlay.frame = CGRectMake(0, 0, naturalSize.width, naturalSize.height)
+//        parentLayer.addSublayer(overlay)
+        
+        let sample = CALayer()
+        sample.frame = CGRectMake(0, 0, naturalSize.width, naturalSize.height)
+        sample.backgroundColor = UIColor.redColor().CGColor
+        parentLayer.addSublayer(sample)
 
         mainCompositionInstruction.animationTool = AVVideoCompositionCoreAnimationTool(postProcessingAsVideoLayer: videoLayer, inLayer: parentLayer)
     }
