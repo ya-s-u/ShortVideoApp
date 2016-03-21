@@ -31,7 +31,7 @@ class VideoGrabber: NSObject, AVCaptureFileOutputRecordingDelegate {
         session = AVCaptureSession()
         output = AVCaptureMovieFileOutput()
 
-        guard let session = session else {
+        guard let session = session, input = input, output = output else {
             return
         }
 
@@ -68,13 +68,16 @@ class VideoGrabber: NSObject, AVCaptureFileOutputRecordingDelegate {
         guard let output = output else {
             return
         }
-        let url = NSURL.tmpFile()
+        let url = NSURL.tmpMP4()
         output.startRecordingToOutputFileURL(url, recordingDelegate: self)
         NSTimer.scheduledTimerWithTimeInterval(interval, target: self, selector: Selector("finish"), userInfo: nil, repeats: false)
     }
 
     internal func finish() {
-        output?.stopRecording()
+        guard let output = output else {
+            return
+        }
+        output.stopRecording()
     }
 
     internal func captureOutput(captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAtURL outputFileURL: NSURL!, fromConnections connections: [AnyObject]!, error: NSError!) {

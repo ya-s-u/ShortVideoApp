@@ -23,7 +23,6 @@ class VideoComposer {
         let videoTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeVideo, preferredTrackID: trackID)
         do {
             let timeRange = CMTimeRangeMake(kCMTimeZero, video.duration)
-            print(video.tracks)
             try videoTrack.insertTimeRange(timeRange, ofTrack: video.tracks.first!, atTime: kCMTimeZero)
         } catch let error as NSError {
             print(error)
