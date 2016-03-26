@@ -1,22 +1,28 @@
 import Foundation
-import APNGKit
+import YYImage
 
 class VideoAnimation: Equatable {
 
     internal var name: String?
-    internal var view: APNGImageView?
+    internal var image: YYImage?
+    internal var view: YYAnimatedImageView?
 
     init(name: String) {
         self.name = name
-        let image = APNGImage(named: name)
-        view = APNGImageView(image: image)
+        image = YYImage(named: "\(name).png")
+        view = YYAnimatedImageView(image: image)
     }
 
     internal var layer: CALayer? {
-        guard let view = view else {
-            return CALayer()
+        let count = image?.animatedImageFrameCount()
+        var images = [CGImage]()
+        var durations = [Double]()
+        for i in 0...count!-1 {
+            images.append((image?.animatedImageFrameAtIndex(i))!.CGImage!)
+            durations.append((image?.animatedImageDurationAtIndex(i))!)
         }
-        return CALayer.APNG(view.image!.frames)
+
+        return CALayer.anime(images, durations: durations)
     }
 
     internal func start() {
@@ -26,7 +32,6 @@ class VideoAnimation: Equatable {
     internal func stop() {
         view?.stopAnimating()
     }
-
 }
 
 func == (lhs: VideoAnimation, rhs: VideoAnimation) -> Bool {

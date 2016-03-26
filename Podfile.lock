@@ -1,19 +1,12 @@
 PODS:
-  - APNGKit (0.3.1)
+  - YYImage (1.0.1):
+    - YYImage/Core (= 1.0.1)
+  - YYImage/Core (1.0.1)
 
 DEPENDENCIES:
-  - APNGKit (from `https://github.com/ya-s-u/APNGKit.git`)
-
-EXTERNAL SOURCES:
-  APNGKit:
-    :git: https://github.com/ya-s-u/APNGKit.git
-
-CHECKOUT OPTIONS:
-  APNGKit:
-    :commit: 9f567fdb73d721c98dc686abc2e39937a6aa64f0
-    :git: https://github.com/ya-s-u/APNGKit.git
+  - YYImage
 
 SPEC CHECKSUMS:
-  APNGKit: aec3b27076308100649c76642c474cdf9a3939f8
+  YYImage: b41b45bc5f32bfcdf67bdfb9c09da9e9832357c0
 
 COCOAPODS: 0.39.0

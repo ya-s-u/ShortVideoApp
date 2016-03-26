@@ -1,12 +1,9 @@
+import Foundation
 import AVFoundation
-import QuartzCore
-import APNGKit
 
 extension CALayer {
 
-    class func APNG(frames: [Frame]) -> CALayer {
-        let images = frames.map { $0.image?.CGImage as! AnyObject }
-        let durations = frames.map { $0.duration }
+    class func anime(images: [CGImage], durations: [Double]) -> CALayer {
         let total = durations.reduce(0, combine: +)
 
         var times = [Double]()

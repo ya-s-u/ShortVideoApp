@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A37C46E1CA6F39F0013475B /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A37C46D1CA6F39F0013475B /* CALayer+.swift */; };
 		5A4097721C9D7B0C00C3979F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4097711C9D7B0C00C3979F /* AppDelegate.swift */; };
 		5A4097741C9D7B0C00C3979F /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4097731C9D7B0C00C3979F /* CameraViewController.swift */; };
 		5A4097771C9D7B0C00C3979F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A4097751C9D7B0C00C3979F /* Main.storyboard */; };
@@ -19,7 +20,6 @@
 		5A4097951C9D928A00C3979F /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4097941C9D928A00C3979F /* DesignableButton.swift */; };
 		5A4097971C9D97CF00C3979F /* VideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4097961C9D97CF00C3979F /* VideoManager.swift */; };
 		5A7077301C9DB289007C0DC7 /* NSURL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70772F1C9DB289007C0DC7 /* NSURL+.swift */; };
-		5A7077341C9DC305007C0DC7 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7077331C9DC304007C0DC7 /* CALayer+.swift */; };
 		5A7077361C9DC4AC007C0DC7 /* VideoAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7077351C9DC4AC007C0DC7 /* VideoAnimation.swift */; };
 		5A7077381C9DCA04007C0DC7 /* VideoComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7077371C9DCA04007C0DC7 /* VideoComposer.swift */; };
 		5A70773A1C9E38D3007C0DC7 /* VideoExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7077391C9E38D3007C0DC7 /* VideoExporter.swift */; };
@@ -29,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A37C46D1CA6F39F0013475B /* CALayer+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		5A40976E1C9D7B0C00C3979F /* ShortVideoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShortVideoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A4097711C9D7B0C00C3979F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A4097731C9D7B0C00C3979F /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		5A4097941C9D928A00C3979F /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
 		5A4097961C9D97CF00C3979F /* VideoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoManager.swift; sourceTree = "<group>"; };
 		5A70772F1C9DB289007C0DC7 /* NSURL+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+.swift"; sourceTree = "<group>"; };
-		5A7077331C9DC304007C0DC7 /* CALayer+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		5A7077351C9DC4AC007C0DC7 /* VideoAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoAnimation.swift; sourceTree = "<group>"; };
 		5A7077371C9DCA04007C0DC7 /* VideoComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoComposer.swift; sourceTree = "<group>"; };
 		5A7077391C9E38D3007C0DC7 /* VideoExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoExporter.swift; sourceTree = "<group>"; };
@@ -169,8 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				5A4097921C9D83CE00C3979F /* UIColor+.swift */,
+				5A37C46D1CA6F39F0013475B /* CALayer+.swift */,
 				5A70772F1C9DB289007C0DC7 /* NSURL+.swift */,
-				5A7077331C9DC304007C0DC7 /* CALayer+.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -311,6 +311,7 @@
 				5A4097741C9D7B0C00C3979F /* CameraViewController.swift in Sources */,
 				5A70773A1C9E38D3007C0DC7 /* VideoExporter.swift in Sources */,
 				5A7077381C9DCA04007C0DC7 /* VideoComposer.swift in Sources */,
+				5A37C46E1CA6F39F0013475B /* CALayer+.swift in Sources */,
 				5A70773C1C9E3940007C0DC7 /* VideoGrabber.swift in Sources */,
 				5A70773E1C9E495C007C0DC7 /* VideoLayer.swift in Sources */,
 				5A4097931C9D83CE00C3979F /* UIColor+.swift in Sources */,
@@ -318,7 +319,6 @@
 				5A7077301C9DB289007C0DC7 /* NSURL+.swift in Sources */,
 				5A4097721C9D7B0C00C3979F /* AppDelegate.swift in Sources */,
 				5A4097911C9D839E00C3979F /* DesignableView.swift in Sources */,
-				5A7077341C9DC305007C0DC7 /* CALayer+.swift in Sources */,
 				5A4097971C9D97CF00C3979F /* VideoManager.swift in Sources */,
 				5A4097951C9D928A00C3979F /* DesignableButton.swift in Sources */,
 			);

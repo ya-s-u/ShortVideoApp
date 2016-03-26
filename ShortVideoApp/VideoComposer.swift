@@ -81,13 +81,8 @@ class VideoComposer {
         videoLayer.frame = CGRectMake(0, 0, naturalSize.width, naturalSize.height)
         parentLayer.addSublayer(videoLayer)
 
-//        overlay.frame = CGRectMake(0, 0, naturalSize.width, naturalSize.height)
-//        parentLayer.addSublayer(overlay)
-        
-        let sample = CALayer()
-        sample.frame = CGRectMake(0, 0, naturalSize.width, naturalSize.height)
-        sample.backgroundColor = UIColor.redColor().CGColor
-        parentLayer.addSublayer(sample)
+        overlay.frame = CGRectMake(0, 0, naturalSize.width, naturalSize.height)
+        parentLayer.addSublayer(overlay)
 
         mainCompositionInstruction.animationTool = AVVideoCompositionCoreAnimationTool(postProcessingAsVideoLayer: videoLayer, inLayer: parentLayer)
     }
