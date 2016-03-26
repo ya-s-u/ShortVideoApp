@@ -72,15 +72,17 @@ class VideoComposer {
         return videoLayerInstruction
     }
 
-    internal func applyLayer(overlay: CALayer) {
+    internal func applyLayer(overlay: [CALayer]) {
         let parentLayer = CALayer()
         let videoLayer = CALayer()
         parentLayer.frame = CGRectMake(0, 0, naturalSize.width, naturalSize.height)
         videoLayer.frame = CGRectMake(0, 0, naturalSize.width, naturalSize.height)
         parentLayer.addSublayer(videoLayer)
 
-        overlay.frame = CGRectMake(0, 0, naturalSize.width, naturalSize.height)
-        parentLayer.addSublayer(overlay)
+        for lay in overlay {
+            lay.frame = CGRectMake(0, 0, naturalSize.width, naturalSize.height)
+            parentLayer.addSublayer(lay)
+        }
 
         mainCompositionInstruction.animationTool = AVVideoCompositionCoreAnimationTool(postProcessingAsVideoLayer: videoLayer, inLayer: parentLayer)
     }
