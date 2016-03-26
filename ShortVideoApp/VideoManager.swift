@@ -68,7 +68,9 @@ class VideoManager: NSObject, VideoGrabberDelegate {
             return
         }
         composer = VideoComposer(video: video)
-        composer?.applyLayer((viewer?.frames?.first?.layer)!)
+        for frame in (viewer?.frames)! {
+            composer?.applyLayer(frame.layer!)
+        }
         composer?.export()
     }
 }

@@ -30,18 +30,16 @@ class VideoComposer {
         } catch let error as NSError {
             print(error)
         }
-        
+
+        mainCompositionInstruction.instructions = [mainInstruction]
+
         if isPortrait {
             naturalSize = CGSizeMake(videoAssetTrack.naturalSize.height, videoAssetTrack.naturalSize.width)
         } else {
             naturalSize = videoAssetTrack.naturalSize
         }
-        
-        let renderWidth = naturalSize.width
-        let renderHeight = naturalSize.height
-        
-        mainCompositionInstruction.renderSize = CGSizeMake(renderWidth, renderHeight)
-        mainCompositionInstruction.instructions = [mainInstruction]
+
+        mainCompositionInstruction.renderSize = CGSizeMake(naturalSize.width, naturalSize.height)
         mainCompositionInstruction.frameDuration = CMTimeMake(1, 30)
     }
 
