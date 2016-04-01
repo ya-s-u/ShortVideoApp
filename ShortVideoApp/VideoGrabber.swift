@@ -68,7 +68,7 @@ class VideoGrabber: NSObject, AVCaptureFileOutputRecordingDelegate {
         guard let output = output else {
             return
         }
-        let url = NSURL.tmpMP4()
+        let url = NSURL.tmp(.MP4)
         output.startRecordingToOutputFileURL(url, recordingDelegate: self)
         NSTimer.scheduledTimerWithTimeInterval(interval, target: self, selector: Selector("finish"), userInfo: nil, repeats: false)
     }
