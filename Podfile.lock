@@ -1,12 +1,15 @@
 PODS:
+  - GPUImage (0.1.7)
   - YYImage (1.0.1):
     - YYImage/Core (= 1.0.1)
   - YYImage/Core (1.0.1)
 
 DEPENDENCIES:
+  - GPUImage
   - YYImage
 
 SPEC CHECKSUMS:
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   YYImage: b41b45bc5f32bfcdf67bdfb9c09da9e9832357c0
 
 COCOAPODS: 0.39.0

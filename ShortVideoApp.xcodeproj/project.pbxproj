@@ -25,6 +25,7 @@
 		5A70773A1C9E38D3007C0DC7 /* VideoExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7077391C9E38D3007C0DC7 /* VideoExporter.swift */; };
 		5A70773C1C9E3940007C0DC7 /* VideoGrabber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70773B1C9E3940007C0DC7 /* VideoGrabber.swift */; };
 		5A70773E1C9E495C007C0DC7 /* VideoLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A70773D1C9E495C007C0DC7 /* VideoLayer.swift */; };
+		5AC72CDA1CAE311900EFD855 /* VideoFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC72CD91CAE311900EFD855 /* VideoFilter.swift */; };
 		DFFBFBCB99C14899498E3760 /* Pods_ShortVideoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC53E697D4A11A3ADFE50C7F /* Pods_ShortVideoApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		5A7077391C9E38D3007C0DC7 /* VideoExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoExporter.swift; sourceTree = "<group>"; };
 		5A70773B1C9E3940007C0DC7 /* VideoGrabber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoGrabber.swift; sourceTree = "<group>"; };
 		5A70773D1C9E495C007C0DC7 /* VideoLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoLayer.swift; sourceTree = "<group>"; };
+		5AC72CD91CAE311900EFD855 /* VideoFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFilter.swift; sourceTree = "<group>"; };
 		C6B2E2A1679A0B8AD5C75E96 /* Pods-ShortVideoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortVideoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShortVideoApp/Pods-ShortVideoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DA8AE0A916E44E0DA6839245 /* Pods-ShortVideoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShortVideoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShortVideoApp/Pods-ShortVideoApp.release.xcconfig"; sourceTree = "<group>"; };
 		DC53E697D4A11A3ADFE50C7F /* Pods_ShortVideoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShortVideoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				5A4097961C9D97CF00C3979F /* VideoManager.swift */,
+				5AC72CD91CAE311900EFD855 /* VideoFilter.swift */,
 				5A70773D1C9E495C007C0DC7 /* VideoLayer.swift */,
 				5A70773B1C9E3940007C0DC7 /* VideoGrabber.swift */,
 				5A7077371C9DCA04007C0DC7 /* VideoComposer.swift */,
@@ -317,6 +320,7 @@
 				5A4097931C9D83CE00C3979F /* UIColor+.swift in Sources */,
 				5A7077361C9DC4AC007C0DC7 /* VideoAnimation.swift in Sources */,
 				5A7077301C9DB289007C0DC7 /* NSURL+.swift in Sources */,
+				5AC72CDA1CAE311900EFD855 /* VideoFilter.swift in Sources */,
 				5A4097721C9D7B0C00C3979F /* AppDelegate.swift in Sources */,
 				5A4097911C9D839E00C3979F /* DesignableView.swift in Sources */,
 				5A4097971C9D97CF00C3979F /* VideoManager.swift in Sources */,

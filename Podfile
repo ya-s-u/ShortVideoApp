@@ -2,5 +2,6 @@
 use_frameworks!
 target 'ShortVideoApp' do
   pod 'YYImage'
+  pod 'GPUImage'
 end
 
